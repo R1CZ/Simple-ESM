@@ -1,0 +1,462 @@
+
+/* Title Styling */
+.employee-management-title {
+  color: #333; 
+  position: fixed;
+  top: 80px;
+  right: 495px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* Centering the "Actions" header */
+.employee-table-container th:last-child {
+  text-align: center;
+}
+
+/* Centering the action buttons in their cells */
+.employee-table-container td:last-child {
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+/* Center Gender and Department columns */
+.employee-table-container td:nth-child(3),
+.employee-table-container td:nth-child(4) {
+  text-align: center;
+}
+
+
+
+/* Table Header Styling */
+.employee-table-container thead {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Higher z-index to stay above other elements */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background: #213346;
+}
+
+.employee-table-container th {
+  background: #213346;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #3d4e5f;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+/* Modify the existing container */
+.employee-table-container {
+  max-height: 520px;
+  overflow-y: auto;
+  width: 76%; 
+  position: fixed;
+  left: 290px; 
+  top:115px; 
+  border-radius: 12px;
+  margin: 20px 0; 
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #3498db #e5ecfc;
+  text-align: center;
+}
+
+
+
+.employee-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+* Table Header Styling */
+.employee-table-container th {
+  color: #fff; 
+  background: #213346; 
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Employee List Items */
+.employee-table-container td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  background: #e5ecfc; /* Maintain readability */
+  transition: background 0.2s ease;
+}
+
+/* Table Header Styling */
+.employee-table-container th {
+  color: #fff; /* Replace with your desired header text color */
+  background-color: #213346; /* Ensure background contrasts with text */
+  font-weight: bold;
+  /* Other existing styles */
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #969696;
+}
+
+/* Table Data Cell Styling */
+.employee-table-container td {
+  color: #000; /* Replace with your desired cell text color */
+  /* Other existing styles */
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #969696;
+}
+
+
+/* Only apply styles if inside the Employee page */
+.employee-container .search-container {
+  position: fixed;
+  top: 86px; /* Adjust for Employee Page */
+  right: 50px;
+  z-index: 0;
+}
+
+
+.search-bar {
+  padding: 8px 12px 8px 38px;
+  width: 200px;
+  right: -235px;
+  background-color: #e7e7e7;
+  color: #2c3e50;
+  border: 1.5px solid #dfe6e9;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2392a0b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px;
+}
+
+
+
+
+.search-bar:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+  background-color: #ffffff;
+}
+
+.search-bar::placeholder {
+  color: #555353;
+  font-weight: 400;
+}
+
+
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 600px;
+  left: 285px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: 500;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #2c82c9, #1a6fb8);
+  box-shadow: 0 4px 8px rgba(44, 130, 201, 0.3);
+}
+
+
+
+/* Add Employee Button Positioning */
+.add-employee-container {
+  position: absolute;
+  top: 70px; /* Matches title positioning */
+  left: 285px; /* Positions button on left side */
+  transition: z-index 0.3s ease;
+}
+
+/* Existing button styles remain unchanged */
+.add-employee-button {
+  background: linear-gradient(135deg, #404654 0%, #383f4e 100%);
+  
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.2);
+  z-index: 1001;
+  position: relative;
+}
+  
+  .add-employee-button:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  }
+  
+  .add-employee-button::before {
+    content: '';
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+  
+  .overlay.show {
+    opacity: 2;
+    visibility: visible;
+  }
+  
+
+  .employee-form-container {
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  
+.employee-form {
+  position: fixed; /* Positions the form absolutely */
+  top:55px; /* Adjust this value as needed */
+  left: 33%; /* Centers the form horizontally */
+  transform: translateX(-50%); /* Centers the form */
+  z-index: 10; /* Ensures the form appears above other elements */
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e8ebed;
+  z-index: 1000;
+}
+
+  
+  .employee-form.show {
+    transform: translateY(20px); /* Ends 20px lower than original position */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* The rest of your CSS remains unchanged */
+  .employee-form form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .employee-form input,
+  .employee-form select {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+    background: #f8f9fa;
+    color: #3c4a5a;
+  }
+  
+  .employee-form input:focus,
+  .employee-form select:focus {
+    background: #ffffff;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  }
+
+
+.employee-form button[type="submit"] {
+    background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .employee-form button[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
+  }
+
+
+  
+/* EmployeePage.css */
+/*.employee-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}*/
+
+
+
+/*.photo-upload-section {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+  .custom-file-upload {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #e67e22;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+} 
+
+.custom-file-upload:hover {
+  background-color: #d35400;
+}/*
+
+
+/* Action Buttons */
+button {
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgb(255, 255, 255); /* Make text inside buttons black */
+}
+
+/* General Button Hover Effect */
+.add-employee-button:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(135deg, #4da9ff, #0a4780);
+
+    color: rgb(15, 15, 15);
+}
+
+.cancel-button:hover:hover {
+  transform: translateY(-2px);
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(135deg, #ff6565, #ff6565);
+
+  color: rgb(15, 15, 15);
+}
+
+
+
+
+/* Optional: Ensuring buttons are displayed as inline-block for proper centering */
+.edit-btn, .delete-btn {
+  display: inline-block; /* Ensures buttons are treated as inline-block elements */
+  /* Other existing styles */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.edit-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.2);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 150px;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #c4c4c4, #dfdedd); /* Soft gradient */
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+  top: -90px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.dropdown-container {
+    max-height: 150px; 
+    overflow-y: auto; 
+}
+
+.scrollable-dropdown {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    max-height: 150px;
+}
+

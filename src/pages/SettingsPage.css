@@ -1,0 +1,20 @@
+/* SettingsPage.css */
+
+  .page-title {
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+
+
+
+
+ 
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .settings-container {
+      grid-template-columns: 1fr;
+    }
+  }

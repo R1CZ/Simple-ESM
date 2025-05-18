@@ -1,0 +1,176 @@
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #2f3542;
+  color: white;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Collapsed State */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar.collapsed .menu-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+}
+
+/* Header Section */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.username {
+  margin-top: 10px; /* Move the admin text lower */
+  font-size: 18px;  /* Optional: Adjust font size */
+  color: white;     /* Or any color you want */
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-top: 10px;
+
+}
+
+/* Menu Items */
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: -35px;
+}
+
+.sidebar-menu li {
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-menu li:hover {
+  transform: translateX(4px);
+}
+
+.sidebar-menu a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu li.active {
+  background: linear-gradient(90deg, #2196f3 0%, rgba(33, 150, 243, 0.1) 100%);
+  border-left: 4px solid #2196f3;
+}
+
+/* Icons */
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed .menu-icon {
+  transform: translateX(4px);
+}
+
+/* Text */
+.menu-text {
+  transition: opacity 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: -12px;
+  background: #2f3542;
+  border: 2px solid #404654;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top:50px;
+}
+
+.toggle-btn:hover {
+  background: #404654;
+  transform: rotate(180deg);
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #404654;
+  border-radius: 4px;
+}
+
+.sidebar {
+
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/public/undraw_real-time-analytics_xu2g.svg');
+  background-size: 85%;
+  background-position: 70% 100%;
+  background-repeat: no-repeat;
+  
+}
+
+
+/* Sidebar.css */
+.back-button {
+  position: relative;
+  margin-left: -270px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}

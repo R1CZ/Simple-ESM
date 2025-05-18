@@ -1,0 +1,57 @@
+/* LeavePage.css */
+.leave-page {
+    color: #000000; /* Black text color */
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+  }
+  
+  .page-title {
+    color: #000000; /* Black text color */
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .leave-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .leave-requests, .new-request {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa; /* Light gray background for sections */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leave-requests h2, .new-request h2 {
+    color: #000000; /* Black text color */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+  }
+  
+  /* If you have form elements or tables, add these styles as well */
+  .leave-page input,
+  .leave-page select,
+  .leave-page textarea,
+  .leave-page table {
+    color: #000000; /* Black text color */
+  }
+  
+  .leave-page table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .leave-page th, .leave-page td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .leave-page th {
+    background-color: #e9ecef;
+    font-weight: 600;
+  }
