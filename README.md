@@ -1,6 +1,9 @@
 # React + Vite
 not done yet
 
+admin
+admin123
+
 Need to install
 
 npm install
