@@ -1,51 +1,89 @@
-/* src/App.css or main layout CSS */
+/* Modern App Layout Styles */
 
 /* Layout container to hold Sidebar and Content */
 .app-container {
   display: flex;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  background: var(--bg-primary);
+  overflow: hidden;
 }
 
-.sidebar {
-  width: 250px; /* Set sidebar width */
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
+/* Main content area */
 .main-content {
   display: flex;
-  flex: 1; /* Take up remaining space */
-  padding: 20px;
-  background-color: #f9f9f9;
-  justify-content: center; /* Center the employee page content */
-}
-
-
-/* Add to your main CSS file */
-.app-container {
-  display: flex;
-  min-height: 100vh;
-}
-
-.main-content {
   flex: 1;
-  display: flex;
   flex-direction: column;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  position: relative;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .main-content.full-width {
   margin-left: 0;
 }
 
+/* Content area */
 .content-area {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-area::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  border-radius: 4px;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #764ba2, #667eea);
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease-in;
 }
 
 /* Loading screen styles */
@@ -55,5 +93,22 @@
   align-items: center;
   height: 100vh;
   font-size: 1.5rem;
-  color: #555;
+  color: var(--text-secondary);
+  font-weight: 600;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .content-area {
+    padding: 10px;
+  }
 }

@@ -9,6 +9,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import { motion } from "framer-motion";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -78,24 +79,53 @@ const Dashboard = () => {
   ];
 
   if (loading) {
-    return <div className="loading-screen">Loading...</div>;
+    return (
+      <motion.div 
+        className="loading-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        Loading...
+      </motion.div>
+    );
   }
 
   return (
-    <div className="dashboard-container">
+    <motion.div 
+      className="dashboard-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Sidebar />
       <div className="dashboard-main">
         <Navbar />
         <div className="dashboard-content">
-          <header className="dashboard-header">
+          <motion.header 
+            className="dashboard-header"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="dashboard-title">Admin Dashboard Overview</h2>
             <p className="dashboard-subtitle">Real-time organizational analytics</p>
-          </header>
+          </motion.header>
 
           <div className="analytics-section">
             {/* Bar Chart with Background Container */}
-            <div className="bar-chart-wrapper" style={{ marginTop: "30px" }}>
-              <div className="bar-chart-container">
+            <motion.div 
+              className="bar-chart-wrapper" 
+              style={{ marginTop: "30px" }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.div 
+                className="bar-chart-container"
+                whileHover={{ scale: 1.02, y: -8 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <ResponsiveContainer width="100%" height={250}>
                   <RadialBarChart
                     innerRadius="10%"
@@ -115,7 +145,7 @@ const Dashboard = () => {
                       dataKey="value"
                       cornerRadius={10}
                       animationBegin={300}
-                      animationDuration={1000}
+                      animationDuration={1500}
                       label={{
                         position: "insideEnd",
                         fill: "#000",
@@ -141,29 +171,57 @@ const Dashboard = () => {
                     </text>
                   </RadialBarChart>
                 </ResponsiveContainer>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="metrics-grid">
-              <div className="metric-card employee-metric">
-                <h3 className="metric-title">Total Employees</h3>
-                <p className="metric-value">{totalEmployees}</p>
-              </div>
-
-              <div className="metric-card department-metric">
-                <h3 className="metric-title">Departments</h3>
-                <p className="metric-value">{totalDepartments}</p>
-              </div>
-
-              <div className="metric-card leave-metric">
-                <h3 className="metric-title">Active Leaves</h3>
-                <p className="metric-value">{totalLeaves}</p>
-              </div>
-            </div>
+            <motion.div 
+              className="metrics-grid"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              {[
+                { title: "Total Employees", value: totalEmployees, class: "employee-metric", delay: 0.5 },
+                { title: "Departments", value: totalDepartments, class: "department-metric", delay: 0.6 },
+                { title: "Active Leaves", value: totalLeaves, class: "leave-metric", delay: 0.7 }
+              ].map((metric, index) => (
+                <motion.div
+                  key={metric.title}
+                  className={`metric-card ${metric.class}`}
+                  initial={{ scale: 0.8, opacity: 0, y: 30 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: metric.delay,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -10,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <h3 className="metric-title">{metric.title}</h3>
+                  <motion.p 
+                    className="metric-value"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: metric.delay + 0.3,
+                      type: "spring"
+                    }}
+                  >
+                    {metric.value}
+                  </motion.p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
